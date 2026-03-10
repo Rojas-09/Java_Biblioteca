@@ -258,4 +258,4 @@ Total de materiales: 3
 ---
 
 **Autor**: Creado para demostrar los fundamentos de POO en Java
-**Año**: 2024
+**Año**: 2026
