@@ -1,9 +1,6 @@
 /**
- * PILAR POO: HERENCIA
- * 
  * Clase Libro que extiende MaterialBibliografico.
- * - HERENCIA: Extiende la clase abstracta MaterialBibliografico
- * - POLIMORFISMO: Implementa de forma específica los métodos abstractos
+ * Implementa de forma específica los métodos abstractos
  */
 public class Libro extends MaterialBibliografico {
     // Atributos específicos del Libro
@@ -21,7 +18,6 @@ public class Libro extends MaterialBibliografico {
         this.setNumeroPaginas(numeroPaginas);
     }
 
-    // PILAR POO: ENCAPSULAMIENTO
     // Getters y Setters con validaciones
     public String getAutor() {
         return autor;
@@ -45,8 +41,7 @@ public class Libro extends MaterialBibliografico {
         this.numeroPaginas = numeroPaginas;
     }
 
-    // PILAR POO: POLIMORFISMO
-    // Implementación específica del método abstracto calcularMulta
+    // Sobrescritura del método para mostrar los detalles de las multas
     @Override
     public double calcularMulta(int diasRetraso) {
         if (diasRetraso <= 0) {
@@ -55,25 +50,23 @@ public class Libro extends MaterialBibliografico {
         return diasRetraso * MULTA_POR_DIA;
     }
 
-    // PILAR POO: POLIMORFISMO
-    // Implementación específica del método abstracto mostrarInformacion
+    // Sobrescritura del método para mostrar detalles específicos del libro
     @Override
     public void mostrarInformacion() {
         System.out.println("\n📚 ===== LIBRO =====");
-        System.out.println("   ID: " + this.getId());
-        System.out.println("   Título: " + this.getTitulo());
-        System.out.println("   Autor: " + this.getAutor());
-        System.out.println("   Año: " + this.getAnioPublicacion());
-        System.out.println("   Páginas: " + this.getNumeroPaginas());
-        System.out.println("   Páginas del libro");
-        System.out.println("   Estado: " + (this.isPrestado() ? "PRESTADO" : "DISPONIBLE"));
-        System.out.println("   Días máx. de préstamo: " + DIAS_MAXIMO_PRESTAMO);
-        System.out.println("   Multa por día de retraso: $" + String.format("%,d", (long) MULTA_POR_DIA).replace(",", "."));
+        System.out.println("ID: " + this.getId());
+        System.out.println("Título: " + this.getTitulo());
+        System.out.println("Autor: " + this.getAutor());
+        System.out.println("Año: " + this.getAnioPublicacion());
+        System.out.println("Páginas: " + this.getNumeroPaginas());
+        System.out.println("Páginas del libro");
+        System.out.println("Estado: " + (this.isPrestado() ? "PRESTADO" : "DISPONIBLE"));
+        System.out.println("Días máx. de préstamo: " + DIAS_MAXIMO_PRESTAMO);
+        System.out.println("Multa por día de retraso: $" + String.format("%,d", (long) MULTA_POR_DIA).replace(",", "."));
         System.out.println("===================\n");
     }
 
-    // PILAR POO: POLIMORFISMO
-    // Implementación específica del método abstracto getDiasMaximoPrestamo
+    // Sobreescritura
     @Override
     public int getDiasMaximoPrestamo() {
         return DIAS_MAXIMO_PRESTAMO;
