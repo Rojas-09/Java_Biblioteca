@@ -1,10 +1,3 @@
-/**
- * PILAR POO: HERENCIA
- * 
- * Clase Pelicula que extiende MaterialBibliografico.
- * - HERENCIA: Extiende la clase abstracta MaterialBibliografico
- * - POLIMORFISMO: Implementa de forma específica los métodos abstractos
- */
 public class Pelicula extends MaterialBibliografico {
     // Atributos específicos de la Pelicula
     private int duracionMinutos;
@@ -21,7 +14,6 @@ public class Pelicula extends MaterialBibliografico {
         this.setDirector(director);
     }
 
-    // PILAR POO: ENCAPSULAMIENTO
     // Getters y Setters con validaciones
     public int getDuracionMinutos() {
         return duracionMinutos;
@@ -45,7 +37,6 @@ public class Pelicula extends MaterialBibliografico {
         this.director = director;
     }
 
-    // PILAR POO: POLIMORFISMO
     // Implementación específica del método abstracto calcularMulta
     @Override
     public double calcularMulta(int diasRetraso) {
@@ -55,7 +46,6 @@ public class Pelicula extends MaterialBibliografico {
         return diasRetraso * MULTA_POR_DIA;
     }
 
-    // PILAR POO: POLIMORFISMO
     // Implementación específica del método abstracto mostrarInformacion
     @Override
     public void mostrarInformacion() {
@@ -71,7 +61,6 @@ public class Pelicula extends MaterialBibliografico {
         System.out.println("===================\n");
     }
 
-    // PILAR POO: POLIMORFISMO
     // Implementación específica del método abstracto getDiasMaximoPrestamo
     @Override
     public int getDiasMaximoPrestamo() {

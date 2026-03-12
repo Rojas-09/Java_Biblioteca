@@ -1,12 +1,4 @@
-/**
- * PILAR POO: ABSTRACCIÓN Y ENCAPSULAMIENTO
- * 
- * Clase abstracta que define el contrato para todos los materiales bibliográficos.
- * - ABSTRACCIÓN: Define métodos abstractos que deben implementar las subclases
- * - ENCAPSULAMIENTO: Atributos privados con getters/setters validados
- */
 public abstract class MaterialBibliografico {
-    // PILAR POO: ENCAPSULAMIENTO
     // Atributos privados - solo accesibles dentro de esta clase
     private String id;
     private String titulo;
@@ -21,7 +13,6 @@ public abstract class MaterialBibliografico {
         this.prestado = false;
     }
 
-    // PILAR POO: ENCAPSULAMIENTO
     // Getters y Setters con validaciones
     public String getId() {
         return id;
@@ -64,10 +55,6 @@ public abstract class MaterialBibliografico {
         this.prestado = prestado;
     }
 
-    // PILAR POO: ABSTRACCIÓN
-    // Métodos abstractos que definen el contrato para las subclases
-    // Cada subclase DEBE implementar estos métodos
-    
     /**
      * Calcula la multa por días de retraso.
      * La multa varía según el tipo de material.

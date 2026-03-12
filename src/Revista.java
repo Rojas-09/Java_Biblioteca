@@ -1,10 +1,3 @@
-/**
- * PILAR POO: HERENCIA
- * 
- * Clase Revista que extiende MaterialBibliografico.
- * - HERENCIA: Extiende la clase abstracta MaterialBibliografico
- * - POLIMORFISMO: Implementa de forma específica los métodos abstractos
- */
 public class Revista extends MaterialBibliografico {
     // Atributos específicos de la Revista
     private String periodicidad; // "semanal", "mensual", "trimestral"
@@ -21,7 +14,6 @@ public class Revista extends MaterialBibliografico {
         this.setNumeroEdicion(numeroEdicion);
     }
 
-    // PILAR POO: ENCAPSULAMIENTO
     // Getters y Setters con validaciones
     public String getPeriodicidad() {
         return periodicidad;
@@ -49,7 +41,6 @@ public class Revista extends MaterialBibliografico {
         this.numeroEdicion = numeroEdicion;
     }
 
-    // PILAR POO: POLIMORFISMO
     // Implementación específica del método abstracto calcularMulta
     @Override
     public double calcularMulta(int diasRetraso) {
@@ -59,7 +50,6 @@ public class Revista extends MaterialBibliografico {
         return diasRetraso * MULTA_POR_DIA;
     }
 
-    // PILAR POO: POLIMORFISMO
     // Implementación específica del método abstracto mostrarInformacion
     @Override
     public void mostrarInformacion() {
@@ -75,7 +65,6 @@ public class Revista extends MaterialBibliografico {
         System.out.println("===================\n");
     }
 
-    // PILAR POO: POLIMORFISMO
     // Implementación específica del método abstracto getDiasMaximoPrestamo
     @Override
     public int getDiasMaximoPrestamo() {

@@ -1,24 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
-/**
- * SISTEMA DE GESTIÓN DE BIBLIOTECA
- * 
- * Clase Main con menú interactivo que demuestra los 4 pilares de POO:
- * 1. ABSTRACCIÓN: Uso de MaterialBibliografico como tipo abstracto
- * 2. ENCAPSULAMIENTO: Acceso a datos a través de getters/setters
- * 3. HERENCIA: Libro, Revista y Pelicula heredan de MaterialBibliografico
- * 4. POLIMORFISMO: ArrayList<MaterialBibliografico> puede contener diferentes tipos
- */
 public class Main {
-    // PILAR POO: POLIMORFISMO
     // ArrayList que puede contener referencias a cualquier subclase de MaterialBibliografico
     private static ArrayList<MaterialBibliografico> biblioteca = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("╔════════════════════════════════════════════════════╗");
-        System.out.println("║   SISTEMA DE GESTIÓN DE BIBLIOTECA - JAVA POO      ║");
+        System.out.println("║   BIBLIOTECA - MENU PRINCIPAL                      ║");
         System.out.println("║   Demostrando los 4 Pilares de POO                 ║");
         System.out.println("╚════════════════════════════════════════════════════╝\n");
 
@@ -160,7 +149,6 @@ public class Main {
             int paginas = validarEntradaPositiva(scanner.nextInt());
             scanner.nextLine();
 
-            // PILAR POO: POLIMORFISMO
             // Se crea un Libro pero se almacena como MaterialBibliografico
             Libro libro = new Libro(id, titulo, anio, autor, paginas);
             biblioteca.add(libro);
@@ -194,7 +182,6 @@ public class Main {
             int edicion = validarEntradaPositiva(scanner.nextInt());
             scanner.nextLine();
 
-            // PILAR POO: POLIMORFISMO
             // Se crea una Revista pero se almacena como MaterialBibliografico
             Revista revista = new Revista(id, titulo, anio, periodicidad, edicion);
             biblioteca.add(revista);
@@ -228,7 +215,6 @@ public class Main {
             System.out.print("Director: ");
             String director = validarEntradaNoVacia(scanner.nextLine());
 
-            // PILAR POO: POLIMORFISMO
             // Se crea una Película pero se almacena como MaterialBibliografico
             Pelicula pelicula = new Pelicula(id, titulo, anio, duracion, director);
             biblioteca.add(pelicula);
@@ -240,11 +226,7 @@ public class Main {
     }
 
     /**
-     * PILAR POO: POLIMORFISMO
-     * Lista todos los materiales de la biblioteca.
-     * Aunque algunos son Libro, otros Revista y otros Pelicula,
      * todos se tratan como MaterialBibliografico en el ArrayList.
-     * Cada uno ejecuta su propia versión de mostrarInformacion()
      */
     private static void listarTodosMateriales() {
         System.out.println("\n" + "=".repeat(50));
@@ -258,18 +240,12 @@ public class Main {
 
         System.out.println("Total de materiales: " + biblioteca.size() + "\n");
 
-        // PILAR POO: POLIMORFISMO
-        // Se recorre el ArrayList de MaterialBibliografico
-        // pero cada objeto ejecuta su propia versión de mostrarInformacion()
         for (MaterialBibliografico material : biblioteca) {
             material.mostrarInformacion();
         }
     }
 
     /**
-     * PILAR POO: POLIMORFISMO
-     * Simula un préstamo y calcula la multa por días de retraso.
-     * Aunque los objetos pueden ser de diferentes tipos,
      * todos tienen el método calcularMulta() pero con comportamientos diferentes.
      */
     private static void simularPrestamoYMulta() {
@@ -298,7 +274,6 @@ public class Main {
                 return;
             }
 
-            // PILAR POO: POLIMORFISMO
             // Se obtiene una referencia a MaterialBibliografico pero puede ser cualquier subtipo
             MaterialBibliografico material = biblioteca.get(indice);
 
@@ -318,7 +293,6 @@ public class Main {
             int diasRetraso = validarEntradaPositiva(scanner.nextInt());
             scanner.nextLine();
 
-            // PILAR POO: POLIMORFISMO
             // Se llama a calcularMulta() pero cada tipo tiene su propia implementación
             double multa = material.calcularMulta(diasRetraso);
 
