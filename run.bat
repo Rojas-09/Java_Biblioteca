@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 > nul
 REM Script para ejecutar el programa Java compilado
 
 echo =========================================
@@ -20,6 +21,6 @@ if not exist "bin\Main.class" (
 REM Ejecutar el programa
 echo Iniciando aplicación...
 echo.
-java -cp bin Main
+java -Dfile.encoding=UTF-8 -cp bin Main
 
 pause

@@ -73,17 +73,17 @@ public class Main {
         // Agregar un Libro
         Libro libro1 = new Libro("L001", "Cien Años de Soledad", 1967, "Gabriel García Márquez", 417);
         biblioteca.add(libro1);
-        System.out.println("✓ Libro agregado: Cien Años de Soledad");
+        System.out.println("Libro agregado: Cien Años de Soledad");
 
         // Agregar una Revista
         Revista revista1 = new Revista("R001", "National Geographic", 2024, "mensual", 258);
         biblioteca.add(revista1);
-        System.out.println("✓ Revista agregada: National Geographic");
+        System.out.println("Revista agregada: National Geographic");
 
         // Agregar una Película
         Pelicula pelicula1 = new Pelicula("P001", "El Señor de los Anillos: La Comunidad del Anillo", 2001, 178, "Peter Jackson");
         biblioteca.add(pelicula1);
-        System.out.println("✓ Película agregada: El Señor de los Anillos\n");
+        System.out.println("Película agregada: El Señor de los Anillos\n");
     }
 
     /**
@@ -118,10 +118,10 @@ public class Main {
                     System.out.println("Volviendo al menú principal...\n");
                     break;
                 default:
-                    System.out.println("❌ Opción inválida.\n");
+                    System.out.println("Opción inválida.\n");
             }
         } catch (Exception e) {
-            System.out.println("❌ Error: Ingrese un número válido.\n");
+            System.out.println("Error: Ingrese un número válido.\n");
             scanner.nextLine();
         }
     }
@@ -131,7 +131,7 @@ public class Main {
      */
     private static void agregarLibro() {
         try {
-            System.out.println("\n📚 Ingrese los datos del Libro:");
+            System.out.println("\nIngrese los datos del Libro:");
             System.out.print("ID (ej: L002): ");
             String id = validarEntradaNoVacia(scanner.nextLine());
 
@@ -152,10 +152,10 @@ public class Main {
             // Se crea un Libro pero se almacena como MaterialBibliografico
             Libro libro = new Libro(id, titulo, anio, autor, paginas);
             biblioteca.add(libro);
-            System.out.println("✓ Libro agregado exitosamente.\n");
+            System.out.println("Libro agregado exitosamente.\n");
 
         } catch (IllegalArgumentException e) {
-            System.out.println("❌ Error: " + e.getMessage() + "\n");
+            System.out.println("Error: " + e.getMessage() + "\n");
         }
     }
 
@@ -250,7 +250,7 @@ public class Main {
      */
     private static void simularPrestamoYMulta() {
         if (biblioteca.isEmpty()) {
-            System.out.println("\n❌ La biblioteca está vacía.\n");
+            System.out.println("\nLa biblioteca está vacía.\n");
             return;
         }
 
